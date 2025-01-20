@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Table</title>
+</head>
+<style>
+  table, tr{
+    border: 1px solid black ;
+    border-collapse: collapse;
+  }
+  th{
+    align-content: left;
+  }
+</style>
+<body>
+  <div>
+    <table style="width: 100%;">
+      <tr>
+        <td style="text-align: center; background-color: azure;" colspan="4"><b>A Complete Table</b></td>
+      </tr>
+      <tr style="background-color: azure;">
+        <td colspan="3" ><b>Invoice#123456</b></td>
+        <td><b>14 January 2025</b></td>
+      </tr>
+      <tr>
+        <td colspan="2"><b>Pay tax:</b></td>
+        <td><b>Customer</b></td>
+      </tr>
+      <tr style="border: none;">
+        <td colspan="2">Acme Billing Co.</td>
+        <td>John Smith</td>
+      </tr>
+      <tr style="border: none;">
+        <td colspan="2">123 Main st.</td>
+        <td>321 Willow way</td>
+      </tr>
+      <tr style="border: none;">
+        <td colspan="2">Cityville, NA 12345</td>
+        <td>SouthEast NorthWest, MA 54321</td>
+      </tr>
+      <tr style="background-color: azure;">
+        <th style="text-align: left;">Name/Description</th>
+        <th style="text-align: left;">Qty.</th>
+        <th style="text-align: left;">@</th>
+        <th style="text-align: left;">Cost</th>
+      </tr>
+      <tr>
+        <td>Paperclips</td>
+        <td>1000000</td>
+        <td>0.001</td>
+        <td>10.00</td>
+      </tr>
+      <tr>
+        <td>Staples</td>
+        <td>1000000</td>
+        <td>0.001</td>
+        <td>10.00</td> 
+      </tr>
+      <tr>
+        <td colspan="3" style="background-color: azure;"><b>subtotal</b></td>
+        <td>100.00</td>
+      </tr>
+      <tr>
+        <td colspan="2" style="background-color: azure;"><b>Tax</b></td>
+        <td>8%</td>
+        <td>10.00</td> 
+      </tr>
+      <tr>
+        <td colspan="3" style="background-color: azure;"><b>Grand Total</b></td>
+        <td>100.00</td> 
+      </tr>
+    </table>
+  </div>
+</body>
+</html>

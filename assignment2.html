@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+    table, tr, td, th{
+    border: 2px;
+    border-style:solid;
+    border-collapse: collapse;
+  }
+  th, td{
+    text-align: center;
+  }
+</style>
+<body>
+  <table style = "width: 80%;">
+    <tr>
+      <td rowspan="3">Day</td>
+      <td colspan="3" style="text-align: center;">Seminar</td>
+    </tr>
+    <tr>
+      <td colspan="2" style="text-align: center;">Schedule</td>
+      <td rowspan="2">Topic</td>
+    </tr>
+    <tr>
+      <td>Begin</td>
+      <td>end</td>
+    </tr>
+      <td rowspan="2">Monday</td>
+      <td rowspan="2" style="background-color: yellow;">8:00am</td>
+      <td rowspan="2" style="background-color: purple;">5:00am</td>
+      <td>Introduction To XML</td>
+    <tr>
+      <td>Validity</td>
+    </tr>
+    <tr>
+      <td rowspan="3">Tuesday</td>
+      <td rowspan="1" style="background-color: yellow;">8:00am</td>
+      <td rowspan="1" style="background-color: yellow;">5:00am</td>
+      <td rowspan="2">XPath</td>
+    </tr>
+    <tr>
+      <td rowspan="1" style="background-color: yellow;">8:00am</td>
+      <td rowspan="1" style="background-color: green;">5:00am</td>
+    </tr>
+
+    <tr>
+      <td rowspan="1" style="background-color: green;">8:00am</td>
+      <td rowspan="1" style="background-color: purple;">5:00am</td>
+      <td>Transformation</td>
+    </tr>
+    <tr>
+      <td>Wednesday</td>
+      <td rowspan="1" style="background-color: yellow;">8:00am</td>
+      <td rowspan="1" style="background-color: green;">5:00am</td>
+      <td>XSL Formating</td>
+    </tr>
+    <tr>
+    </tr>
+  </table>
+</body>
+</html>
+
+<!-- /*
+absolute length unit => cc mm ....
+relative length unit  => em ex ch rem vw vh vmin vmax %
+assignment flex box and grid 
+------------------
+| 1 2 3 4 5 6 7 8 |
+------------------
+media query assignment
+*/ -->
