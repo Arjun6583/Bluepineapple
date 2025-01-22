@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic List</title>
+</head>
+<body>
+    <h1>Dynamic List Example</h1>
+    <button id="addItemButton">Add Item</button>
+    <ul id="itemList"></ul>
+    <script>
+        const addItemButton = document.getElementById("addItemButton");
+        const itemList = document.getElementById("itemList");
+        // Add an event listener to the button
+        addItemButton.addEventListener("click", function() {
+            // Get the current number of items in the list
+            const itemCount = itemList.children.length;
+
+            // Create a new list item
+            const newItem = document.createElement("li");
+            newItem.textContent = `Item ${itemCount + 1}`;
+
+            // Append the new item to the unordered list
+            itemList.appendChild(newItem);
+        });
+
+    </script>
+</body>
+</html>
