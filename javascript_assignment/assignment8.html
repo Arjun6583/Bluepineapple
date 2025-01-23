@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toggle Color</title>
+</head>
+<style>
+  .box{
+    height: 200px;
+    width: 200px;
+    /* background-color: lightblue; */
+    margin-bottom: 10px;
+  }
+</style>
+<body>
+  <div class="box" style="background-color: red;">
+  </div>
+  <button id="toggle">Toggle Color</button>
+  <script>
+    // creating object of div and button
+    const box = document.getElementsByClassName("box");
+    const toggle_color_btn = document.getElementById("toggle");
+    // adding event on click listener on button 
+    toggle_color_btn.addEventListener("click", function(){
+      let color = box[0].style.backgroundColor;
+      // toggle color
+      if(color == "lightblue")
+        box[0].style.backgroundColor = "red";
+      else 
+        box[0].style.backgroundColor = "lightblue";
+    });
+  </script>
+</body>
+</html>

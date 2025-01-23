@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Change</title>
+</head>
+<style>
+  div{
+    height: 400px;
+    width: 300px;
+    margin-bottom: 10px;
+  }
+  img{
+    height: 100%;
+    width: 100%;
+  }
+</style>
+<body>
+  <div>
+    <img src="https://img1.hscicdn.com/image/upload/f_auto,t_ds_w_1200/lsci/db/PICTURES/CMS/348100/348106.jpg" id = "photo" alt="viart">
+  </div>
+  <button id ="change-btn">Change Photo</button>
+  <script>
+    const img = document.getElementById("photo");
+    const btn = document.getElementById("change-btn");
+    btn.addEventListener("click", function(){
+      let name = img.alt;
+      if(name == "virat")
+      {
+        img.src = "https://e0.pxfuel.com/wallpapers/721/719/desktop-wallpaper-rohit-sharma-rohit-sharma-indian-cricketer.jpg";
+        img.alt = "rohit"
+        btn.innerText = "Change to Rohit"
+      }
+      else 
+      {
+        img.src = "https://img1.hscicdn.com/image/upload/f_auto,t_ds_w_1200/lsci/db/PICTURES/CMS/348100/348106.jpg";
+        img.alt = "virat"
+        btn.innerText = "Change to Virat"
+      }
+
+
+    })
+  </script>
+</body>
+</html>

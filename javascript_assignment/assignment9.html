@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Change text color</title>
+</head>
+<style>
+</style>
+<body>
+  <p id = "para" style="color: blue;">India vs England First match India win by 7 wickets....</p>
+  <button id="red">Red Color</button>
+  <button id="blue">Blue Color</button>
+  <script>
+    const red = document.getElementById("red");
+    const blue = document.getElementById("blue");
+    // adding event on click listener on button 
+    red.addEventListener("click", function(){
+      document.getElementById("para").style.color = "red";
+    });
+    blue.addEventListener("click", function(){
+      document.getElementById("para").style.color = "blue";
+    });
+  </script>
+</body>
+</html>

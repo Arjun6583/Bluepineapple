@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Validation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 500px;
+    }
+    form {
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 5px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+    .error {
+      color: red;
+      font-size: 0.9em;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px 15px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Form with Validation</h1>
+  <form id="customForm">
+    <!-- Name Field -->
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name">
+    <p class="error" id="nameError"></p>
+
+    <!-- Email Field -->
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email">
+    <p class="error" id="emailError"></p>
+
+    <!-- Age Field -->
+    <label for="age">Age</label>
+    <input type="number" id="age" name="age">
+    <p class="error" id="ageError"></p>
+
+    <!-- Submit Button -->
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    // Get references to form and input fields
+    const form = document.getElementById('customForm');
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const ageInput = document.getElementById('age');
+
+    // Get references to error message elements
+    const nameError = document.getElementById('nameError');
+    const emailError = document.getElementById('emailError');
+    const ageError = document.getElementById('ageError');
+
+    // Helper function to validate email format
+    const isValidEmail = (email) => {
+      let i;
+      for(i = 0; i < email.length; ++i)
+      {
+        if(email[i] == '@')
+          break;
+        console.log(email[i]);
+      }
+      let str = "gmail.com";
+      let j = 0;
+      i += 1;
+      for(; i < email.length; ++i, j++)
+      {
+        console.log(email[i]);
+        if(str[j] == email[i])
+          continue;
+        return false;
+      }
+      console.log(i + " " + j);
+      if(j != str.length)
+        return false;
+      return true;
+    };
+
+    // Form submit event listener
+    form.addEventListener('submit', (event) => {
+      let isValid = true;
+
+      // Reset error messages
+      nameError.textContent = '';
+      emailError.textContent = '';
+      ageError.textContent = '';
+
+      // Validate Name
+      if (nameInput.value.trim() === '') {
+        nameError.textContent = 'Name is required.';
+        isValid = false;
+      }
+
+      // Validate Email
+      if (emailInput.value.trim() === '') {
+        emailError.textContent = 'Email is required.';
+        isValid = false;
+      } else if (!isValidEmail(emailInput.value.trim())) {
+        emailError.textContent = 'Please enter a valid email address.';
+        isValid = false;
+      }
+
+      // Validate Age (if provided)
+      if (ageInput.value.trim() !== '') {
+        const age = parseInt(ageInput.value, 10);
+        if (isNaN(age) || age <= 18) {
+          ageError.textContent = 'Age must be a number greater than 18.';
+          isValid = false;
+        }
+      }
+
+      // Prevent form submission if validation fails
+      if (!isValid) {
+        event.preventDefault();
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment12</title>
+</head>
+<style>
+  .model{
+    height: 300px;
+    width: 300px;
+  }
+  #simple-div{
+    height: 200px;
+    width: 200px;
+    margin-bottom: 10px;
+    background-color: antiquewhite;
+  }
+</style>
+<body>
+  <div class="model">
+    <div id="simple-div">
+    </div>
+    <button id="cls-btn">Close</button>
+  </div>
+  <button id="show-btn">Show Model</button>
+  <script>
+    const show_btn = document.getElementById("show-btn");
+    const cls_btn = document.getElementById("cls-btn");
+    const model = document.getElementsByClassName("model");
+    show_btn.addEventListener("click", function(){
+      model[0].style.display = 'block';
+    });
+    cls_btn.addEventListener("click", function(){
+      model[0].style.display = 'none';
+    });
+  </script>
+</body>
+</html>
