@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Element</title>
+</head>
+<body>
+  <my-greeting name = "Arjun" color = "blue"></my-greeting>
+</body>
+<script>
+  class MyGreeting extends HTMLElement{
+    constructor()
+    {
+      super();
+      this.attachShadow({mode: 'open'});
+      this.shadowRoot.innerHTML = `
+        <style>
+          p{
+            font-family: Arial, sans-serif;
+            font-size: 1-2rem;
+          }
+        </style>
+        <p>Hi <span id ="name"></span> !</p>
+        `;
+    }
+
+    static get observedAttributes() {
+      return ['name', 'color'];
+    }
+
+    attributeChangedCallback(name, oldValue, newValue){
+      if(name === 'name')
+      {
+        this.shadowRoot.querySelector('#name').textContent = newValue;
+      }
+      else if(name === 'color')
+      {
+        this.shadowRoot.querySelector('#name').style.color = newValue
+      }
+    }  
+  }
+  customElements.define('my-greeting', MyGreeting);
+</script>
+</html>
